@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Management</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-    const loginData = JSON.parse(localStorage.getItem('loginData'));
-if (!loginData || loginData.email !== 'admin@empher.com') {
-  alert('Admin Not Logged In');
-  window.location.href = 'index.html';
-}
-</script>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="admin.html">Admin</a>
+    <a href="books.html">Books</a>
+  </nav>
+  <form id="addBookForm">
+    <h2>Add New Book</h2>
+    <label>Title:</label>
+    <input type="text" id="title" required>
+    <label>Author:</label>
+    <input type="text" id="author" required>
+    <label>Category:</label>
+    <select id="category">
+      <option value="fiction">Fiction</option>
+      <option value="comedy">Comedy</option>
+      <option value="technical">Technical</option>
+    </select>
+    <button type="submit">Add Book</button>
+  </form>
+  <div id="booksGrid" class="grid"></div>
+  <script src="scripts/admin.js"></script>
 </body>
 </html>
